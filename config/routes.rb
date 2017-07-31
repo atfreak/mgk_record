@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/data_admin', as: 'rails_admin'
+  devise_for :admin_users
   resources :blog, only: [:index, :show, :list] do
     collection do
       get 'list'
